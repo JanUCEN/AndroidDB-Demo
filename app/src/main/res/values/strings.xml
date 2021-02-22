@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">UserDatabase</string>
+    <string name="usernameLabel">Username</string>
+    <string name="saveLabel">Save</string>
+    <string name="adduserlabel">Add a user</string>
+    <string name="backLabel">Back</string>
+    <string name="listUsers">List Users</string>
+</resources>
