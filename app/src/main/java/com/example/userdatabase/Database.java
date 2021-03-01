@@ -22,7 +22,7 @@ public class Database extends DatabaseHelper {
      * @return Cursor list of results
      */
     public Cursor getUserList() {
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = getReadableDatabase();
         String table = "user";
         String[] columns = {"username"};
         String selection = "";
@@ -34,9 +34,27 @@ public class Database extends DatabaseHelper {
 
 
         Cursor cursor = db.query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit);
-
-
         return cursor;
     }
+
+    public int deleteUser(String username) {
+        SQLiteDatabase db = getWritableDatabase();
+        String column = "username=?";
+        String[] user = {username};
+
+        return db.delete("user",column, user);
+    }
+
+    public int saveUser(String search, String newValue) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("username",newValue);
+        String[] searches = {search};
+
+        return db.update("user",values,"username=?",searches);
+    }
+
+
+
 
 }

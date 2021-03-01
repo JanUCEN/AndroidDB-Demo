@@ -42,7 +42,7 @@ public class AddUserActivity extends AppCompatActivity {
                 long success = db.addUser(values);
                 if(success==-1) {
                 }
-//                startActivity(new Intent(AddUserActivity.this,ListUserActivity.class));
+                startActivity(new Intent(AddUserActivity.this,ListUserActivity.class));
             }
         });
 
